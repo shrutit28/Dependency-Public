@@ -1,6 +1,7 @@
 import os
 import ast
-
+from django.http 
+import HttpResponse
 
 #uncomment/comment to see the difference in scan results
 #do not enter it will change line number and wont be marked as duplicate
@@ -10,8 +11,12 @@ print(1)
 
 
 #malicious Code
-direct = input("Specify the target directory: ")
-password = input("Enter the password: ")
+def index(request):
+    value = request.GET.get("value")
+    response = HttpResponse("")
+    response["Set-Cookie"] = value  # Noncompliant
+    response.set_cookie("sessionid", value)  # Noncompliant
+    return response
 #malicious Code
 
 
