@@ -9,7 +9,10 @@ eval("__import__('os').system('clear')", {'__builtins__':{}})
 print(1)
 
 
-
+#malicious Code
+direct = input("Specify the target directory: ")
+password = input("Enter the password: ")
+#malicious Code
 
 
 if __name__ == '__main__':
